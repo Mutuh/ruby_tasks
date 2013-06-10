@@ -7,19 +7,11 @@ def subtract(first, second)
 end
 
 def sum(numbers)
-  sumOfNumbers = 0
-  if numbers.length > 0
-  numbers.each { |number| sumOfNumbers += number }
-  end
-  sumOfNumbers
+  numbers.inject(0, :+)
 end
 
 def multiply(numbers)
-  multipliedNumbers = 1
-  if numbers.length > 0
-  numbers.each { |number| multipliedNumbers *= number }
-  end
-  multipliedNumbers
+  numbers.inject(1, :*)
 end
 
 def power(first, second)
@@ -27,9 +19,5 @@ def power(first, second)
 end
 
 def factorial(number)
-  if number <= 1
-    1
-  else
-    number * factorial(number - 1)
-  end
+  number <= 1 ? 1 : number * factorial(number - 1)
 end

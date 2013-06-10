@@ -7,11 +7,7 @@ def shout(string)
 end
 
 def repeat(string, amount=2)
-  strings = ""
-  for i in 1..amount do
-    strings += string+" "
-  end
-  strings.strip
+  Array.new(amount, string).join(" ")
 end
 
 def start_of_word(word, amount)
